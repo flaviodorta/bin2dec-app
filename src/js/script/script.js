@@ -1,76 +1,32 @@
-const $ = require('jquery');
+var bg = document.querySelector('#background');
 
-// Função auxiliar para obter o tamanho das linhas e colunas da matriz
-const quantityOfMatrixElements = (matrix) => {
-  const numberOfRowElements = matrix.length;
+var ctx = bg.getContext('2d');
 
-  const numberOfColumnElements = matrix[0].length;
+bg.height = window.screen.availHeight;
+bg.width = window.screen.availWidth;
 
-  return [numberOfRowElements, numberOfColumnElements];
-};
+var fontSize = 10;
+var columns = bg.width / fontSize;
 
-// Função para gerar a matriz
-const createMatrixWithRandomBinaries = () => {
-  const numberOfRowElements = Math.floor(window.innerHeight / 5) + 1 + 1;
+var drops = [];
 
-  const numberOfColumnElements = Math.floor(window.innerWidth / 5) + 1 + 1;
+for (var x = 0; x < columns; x++) drops[x] = 1;
 
-  return [...Array(numberOfRowElements)].map(() =>
-    [...Array(numberOfColumnElements)].map(() => Math.round(Math.random()))
-  );
-};
+function draw() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+  ctx.fillRect(0, 0, bg.width, bg.height);
 
-// Função para mutar aleatóriamente um elemento da matriz
-const mutateUniqueElementInMatrix = (matrix) => {
-  const [numberOfRowElements, numberOfColumnElements] =
-    quantityOfMatrixElements(matrix);
+  ctx.fillStyle = '#008f11';
+  ctx.font = fontSize + "px 'JetBrains mono'";
 
-  const randomRowIdx = Math.floor(Math.random() * numberOfRowElements);
+  for (var i = 0; i < drops.length; i++) {
+    var text = Math.round(Math.random());
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-  const randomColumnIdx = Math.floor(Math.random() * numberOfColumnElements);
+    if (drops[i] * fontSize > bg.height && Math.random() > 0.995) drops[i] = 0;
 
-  const randomBinary = Math.round(Math.random());
-
-  matrix[randomRowIdx][randomColumnIdx] = randomBinary;
-};
-
-// Função para unificar todos elementos de um array numa única string
-const turnArrayToText = (array) => {
-  return array.reduce((acc, el) => {
-    return acc + el;
-  }, '');
-};
-
-// Função para atrelar os números binários no texto html do background
-const appendBinariesToBackground = (matrix) => {
-  const [numberOfRowElements, _] = quantityOfMatrixElements(matrix);
-
-  for (let i = 0; i < numberOfRowElements; i++) {
-    const rowElement = document.createElement('p');
-
-    const rowText = document.createTextNode(turnArrayToText(matrix[i]));
-
-    rowElement.appendChild(rowText);
-
-    rowElement.classList.add('row');
-
-    $('.background').append(rowElement);
-
-    $('.background').append('</br>');
+    drops[i]++;
   }
-};
+}
 
-$(document).ready(() => {
-  const matrix = createMatrixWithRandomBinaries();
-  console.log(matrix);
-  appendBinariesToBackground(matrix);
-});
-
-// Como criar uma função que recebe um quantidade desconhecida de funções
-// que podem ter ou não argumentos
-// const testPerformance = () => {
-//   for (let i = 0; i < functions.length; i++) {
-//     functions[i]();
-//   }
-//   t2 = performance.now();
-// };
+setInterval(draw, 40);
