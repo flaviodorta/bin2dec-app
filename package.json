@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "css": "node-sass --include-path scss src/styles/main.scss src/css/main.css",
-    "watch": "nodemon -e scss,js -x 'npm run css'",
+    "watch-sass": "nodemon -e scss,js -x 'npm run css'",
+    "watch-js": "nodemon -e js -x 'npm run build'",
     "build": "browserify src/js/script/script.js -o src/js/main.js"
   },
   "repository": {
