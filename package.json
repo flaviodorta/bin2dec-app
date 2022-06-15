@@ -1,38 +1,35 @@
 {
   "name": "bin2dec-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
+  "description": "Application to converter binary to decimal or decimal to binary",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "css": "node-sass --include-path scss src/styles/main.scss src/css/main.css",
+    "watch": "nodemon -e scss,js -x 'npm run css'",
+    "build": "browserify src/js/script/script.js -o src/js/main.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilotimo/bin2dec-app.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [
+    "binary",
+    "decimal",
+    "converter"
+  ],
+  "author": "Flavio Dorta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilotimo/bin2dec-app/issues"
+  },
+  "homepage": "https://github.com/lilotimo/bin2dec-app#readme",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
   }
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metas tags padrão do HTML 5 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Font: JetBrains Mono -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Arquivo CSS já transpilado do SCSS -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Arquivo com os scripts JQuery transpilado pelo Browserify -->
+    <script src="js/main.js"></script>
+
+    <title>Binary Converter</title>
+  </head>
+  <body>
+    <main class="layout">
+      <div class="background"></div>
+      <div class="container">
+        <div class="type-form">
+          <form>
+            <label class="type-form__select-label" for="types">From</label>
+            <select class="type-form__select" name="types" id="types">
+              <option value="decimal">Decimal</option>
+              <option value="binary">Binary</option>
+              <option value="octal">Octal</option>
+              <option value="hexadecimal">Hexadecimal</option>
+              <option value="text">Text</option>
+            </select>
+          </form>
+        </div>
+
+        <div class="type-form">
+          <form>
+            <label class="type-form__select-label" for="types">To</label>
+            <select class="type-form__select" name="types" id="types">
+              <option value="decimal">Decimal</option>
+              <option value="binary">Binary</option>
+              <option value="octal">Octal</option>
+              <option value="hexadecimal">Hexadecimal</option>
+              <option value="text">Text</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

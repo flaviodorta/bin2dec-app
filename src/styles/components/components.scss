@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @mixin xxlxlmd {
+    padding: 3.2rem;
+    background-color: $gray-background;
+    width: 60rem;
+    height: 50rem;
+    border: 1px solid $gray-border;
+    border-radius: 6px;
+  }
+
+  @include resp(xxl) {
+    @include xxlxlmd();
+  }
+
+  @include resp(xl) {
+    @include xxlxlmd();
+  }
+}
+
+.type-form {
+  color: black;
+}
