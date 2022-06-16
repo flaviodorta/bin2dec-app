@@ -1,27 +1,127 @@
+#background {
+  // Estilos do background na forma de código binário aleatórios
+  z-index: -1;
+  position: absolute;
+  display: block;
+  background-color: black;
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
-  @mixin xxlxlmd {
-    padding: 3.2rem;
-    background-color: $gray-background;
-    width: 60rem;
-    height: 50rem;
-    border: 1px solid $gray-border;
-    border-radius: 6px;
+  border: 1px solid $gray-border;
+  border-radius: 6px;
+
+  background-color: $gray-background;
+
+  box-shadow: $shadow;
+
+  height: 40rem;
+  padding: 2rem;
+
+  @include resp(sm) {
+    font-size: 1.3rem;
+    width: 80%;
   }
 
-  @include resp(xxl) {
-    @include xxlxlmd();
+  @include resp(md) {
+    font-size: 1.5rem;
+    width: 70%;
   }
 
   @include resp(xl) {
-    @include xxlxlmd();
+    width: 40%;
+  }
+
+  @include resp(xxl) {
+    width: 30%;
   }
 }
 
-.type-form {
-  color: black;
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.8rem;
+
+  &:first-child {
+    justify-content: flex-start;
+
+    & > .form-group {
+      margin-right: 1.6rem;
+    }
+  }
+
+  &:nth-child(3) {
+    justify-content: flex-start;
+
+    & > button {
+      padding: 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.5rem;
+      color: white;
+
+      &:first-child {
+        background-color: $green-button;
+        margin-right: 1.6rem;
+        transition: all 0.2s;
+
+        &:active {
+          background-color: $green-button-active;
+          transition: all 0.2s;
+        }
+      }
+      &:last-child {
+        background-color: $gray-button;
+        transition: all 0.2s;
+
+        &:active {
+          background-color: $gray-button-active;
+          transition: all 0.2s;
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  & > label,
+  select {
+    display: block;
+  }
+
+  & > label {
+    margin-bottom: 0.8rem;
+  }
+
+  & > select {
+    padding: 1rem;
+    font-size: 1.6rem;
+    width: 100%;
+  }
+
+  & > input {
+    font-size: 0.8rem;
+    padding: 1rem;
+
+    &:focus {
+      border-color: $blue-one;
+    }
+  }
+
+  & > textarea {
+    height: 10rem;
+    width: 100%;
+  }
 }

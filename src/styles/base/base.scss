@@ -1,10 +1,3 @@
-$blue-one: #049cb3;
-$green-one: #008f11;
-$gray-one: #cfd9de;
-$gray-background: #f0eedc;
-$gray-border: #d4d5d4;
-$black-background: #0d0208;
-
 *,
 *::before,
 *::after {
@@ -18,6 +11,7 @@ html {
   scroll-behavior: smooth;
   color: black;
   height: 100%;
+  font-family: $font-family;
 
   // Ajusta o texto no Safari do iPhone
   -webkit-text-size-adjust: 10%;
@@ -26,4 +20,8 @@ html {
 body {
   font-size: 1.6rem;
   height: 100%;
+
+  @include resp(sm) {
+    font-size: 1.5rem;
+  }
 }

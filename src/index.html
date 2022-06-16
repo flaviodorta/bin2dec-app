@@ -29,10 +29,10 @@
 
       <!-- Container para os forms do tipos de base númerica -->
       <div class="container">
-        <div class="type-form">
-          <form>
-            <label class="type-form__select-label" for="types">From</label>
-            <select class="type-form__select" name="types" id="types">
+        <div class="row">
+          <form class="form-group">
+            <label for="types">From</label>
+            <select name="types" id="types">
               <option value="decimal">Decimal</option>
               <option value="binary">Binary</option>
               <option value="octal">Octal</option>
@@ -40,10 +40,8 @@
               <option value="text">Text</option>
             </select>
           </form>
-        </div>
 
-        <div class="type-form">
-          <form>
+          <form class="form-group">
             <label class="type-form__select-label" for="types">To</label>
             <select class="type-form__select" name="types" id="types">
               <option value="decimal">Decimal</option>
@@ -54,10 +52,27 @@
             </select>
           </form>
         </div>
-      </div>
 
-      <!-- <button>Click</button> -->
+        <div class="row">
+          <form class="form-group">
+            <label for="number">Enter decimal number</label>
+            <input id="number" type="text" />
+          </form>
+        </div>
+
+        <div class="row">
+          <button>Convert</button>
+          <button>Reset</button>
+        </div>
+
+        <div class="row">
+          <form class="form-group">
+            <label for="output">Binary number</label>
+            <textarea name="output" id="output" readonly></textarea>
+          </form>
+        </div>
+      </div>
     </main>
-    <script src="js/script/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

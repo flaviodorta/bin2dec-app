@@ -5,17 +5,5 @@
   align-items: center;
   height: 100%;
   position: relative;
-}
-
-#background {
-  // Estilos do background na forma de código binário aleatórios
-  z-index: -1;
-  position: absolute;
-  display: block;
-  background-color: black;
-}
-
-.row {
-  margin: 0.3rem 0;
-  display: block;
+  overflow: hidden;
 }
