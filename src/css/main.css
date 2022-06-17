@@ -69,7 +69,7 @@ body {
   margin-bottom: 1.8rem; }
   .row:first-child {
     justify-content: flex-start; }
-    .row:first-child > .form-group {
+    .row:first-child > .form-group:first-child {
       margin-right: 1.6rem; }
   .row:nth-child(3) {
     justify-content: flex-start; }
@@ -78,20 +78,24 @@ body {
       border: none;
       border-radius: 4px;
       font-size: 1.5rem;
-      color: white; }
+      font-weight: bold;
+      color: #fdfcfa;
+      display: flex;
+      align-items: center; }
+      .row:nth-child(3) > button .button-icon {
+        fill: #fdfcfa;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.4rem; }
       .row:nth-child(3) > button:first-child {
         background-color: #16a34a;
-        margin-right: 1.6rem;
-        transition: all 0.2s; }
+        margin-right: 1.6rem; }
         .row:nth-child(3) > button:first-child:active {
-          background-color: #15803d;
-          transition: all 0.2s; }
+          background-color: #15803d; }
       .row:nth-child(3) > button:last-child {
-        background-color: #64748b;
-        transition: all 0.2s; }
+        background-color: #64748b; }
         .row:nth-child(3) > button:last-child:active {
-          background-color: #334155;
-          transition: all 0.2s; }
+          background-color: #334155; }
 
 .form-group {
   display: flex;
@@ -105,12 +109,33 @@ body {
   .form-group > select {
     padding: 1rem;
     font-size: 1.6rem;
-    width: 100%; }
+    background-color: #fdfcfa;
+    width: 100%;
+    border: 1px solid #d4d5d4;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out; }
+    .form-group > select:focus {
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.35); }
   .form-group > input {
-    font-size: 0.8rem;
-    padding: 1rem; }
+    padding: 1rem;
+    border: 1px solid #d4d5d4;
+    background-color: #fdfcfa;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out; }
     .form-group > input:focus {
-      border-color: #1b99d4; }
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.4);
+      transition: all 0.2s ease-in-out; }
   .form-group > textarea {
     height: 10rem;
-    width: 100%; }
+    width: 100%;
+    border: 1px solid #d4d5d4;
+    background-color: #fdfcfa;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out; }
+    .form-group > textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.35);
+      transition: all 0.2s ease-in-out; }

@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <script src="js/svg-inject.js"></script>
+
+    <link rel="icon" type="image/png" href="assets/binary.png" />
+
     <!-- Google Font: JetBrains Mono -->
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap"
@@ -56,13 +60,34 @@
         <div class="row">
           <form class="form-group">
             <label for="number">Enter decimal number</label>
-            <input id="number" type="text" />
+            <input
+              id="number"
+              type="text"
+              placeholder="Only numbers between 0 and 9"
+            />
           </form>
         </div>
 
         <div class="row">
-          <button>Convert</button>
-          <button>Reset</button>
+          <button>
+            <img
+              class="button-icon"
+              src="assets/calculator-solid.svg"
+              alt="Converter entered number"
+              onload="SVGInject(this)"
+            />
+            Convert
+          </button>
+
+          <button>
+            <img
+              class="button-icon"
+              src="assets/arrow-rotate-left-solid.svg"
+              alt="Reset entered input"
+              onload="SVGInject(this)"
+            />
+            Reset
+          </button>
         </div>
 
         <div class="row">
@@ -73,6 +98,7 @@
         </div>
       </div>
     </main>
-    <script src="js/script.js"></script>
+
+    <script src="js/matrix.js"></script>
   </body>
 </html>
