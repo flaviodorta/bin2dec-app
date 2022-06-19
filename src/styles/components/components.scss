@@ -95,20 +95,16 @@
       &:first-child {
         background-color: $green-button;
         margin-right: 1.6rem;
-        // transition: all 0.2s ease;
 
         &:active {
           background-color: $green-button-active;
-          // transition: $transition;
         }
       }
       &:last-child {
         background-color: $gray-button;
-        // transition: $transition;
 
         &:active {
           background-color: $gray-button-active;
-          // transition: $transition;
         }
       }
     }

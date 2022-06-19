@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Application to converter binary to decimal or decimal to binary",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "css": "node-sass --include-path scss src/styles/main.scss src/css/main.css",
     "watch-sass": "nodemon -e scss,js -x 'npm run css'",
-    "watch-js": "nodemon -e js -x 'npm run build'",
-    "build": "browserify src/js/script/script.js -o src/js/main.js"
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --config webpack.dev.js",
+    "start:dist": "webpack --config webpack.prod.js",
+    "preview": "npm run build && npm run start:dist"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   "keywords": [
     "binary",
     "decimal",
+    "hex",
+    "octal",
+    "text",
     "converter"
   ],
   "author": "Flavio Dorta",
@@ -26,7 +30,26 @@
   },
   "homepage": "https://github.com/lilotimo/bin2dec-app#readme",
   "devDependencies": {
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "html-loader": "^3.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "postcss-loader": "^7.0.0",
+    "sass": "^1.52.3",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  },
+  "standard": {
+    "env": [
+      "node",
+      "es6"
+    ]
   }
 }

@@ -7,6 +7,7 @@ var output = document.querySelector('#output');
 var convertButton = document.querySelector('#convert-button');
 var resetButton = document.querySelector('#reset-button');
 
+// Funções auxiliares
 function convertNumberByBase(number, base1, base2) {
   return parseInt(number, base1).toString(base2);
 }
@@ -22,6 +23,7 @@ function convertTextToNumberByBase(text, base) {
   return [...text].map((el) => el.charCodeAt(0).toString(base)).join(' ');
 }
 
+// Funções que vão ser chamadas no event listener da tag HTML
 function outputConvertedNumber() {
   const bases = {
     types: ['decimal', 'binary', 'octal', 'hexadecimal'],

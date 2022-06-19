@@ -20,7 +20,7 @@ fromSelect.addEventListener('change', () => {
 
   if (fromSelect.value === 'octal') input.placeholder = 'Only numbers from 0 to 7';
 
-  if (fromSelect.value === 'hexadecimal') input.placeholder = 'Only numbers from 0 to 9, and letters from "a" to "e" or "A" to "E"';
+  if (fromSelect.value === 'hexadecimal') input.placeholder = 'Only numbers from 0 to 9 and letters from "a" to "e" or "A" to "E"';
 
   if (fromSelect.value === 'text') input.placeholder = 'Enter a text';
 
