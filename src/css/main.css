@@ -91,7 +91,6 @@ body {
         .row:nth-child(3) > button:first-child:disabled:active {
           background: #ff4c30; }
       .row:nth-child(3) > button .button-icon {
-        fill: #fdfcfa;
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 0.4rem; }

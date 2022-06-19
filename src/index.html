@@ -8,11 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Algoritmo para injetar o svg na tag image como svg assim permitindo
-         manipular a svg pelo css
-    -->
-    <script src="js/svg-inject.js"></script>
-
     <!-- Favicon do site -->
     <link rel="icon" type="image/png" href="assets/binary.png" />
 
@@ -66,12 +61,12 @@
         <!-- Butões para converter e limpar o input -->
         <div class="row">
           <button id="convert-button" onclick="outputConvertedNumber()">
-            <img class="button-icon" src="assets/calculator-solid.svg" onload="SVGInject(this)" alt="Converter entered number" />
+            <img class="button-icon" src="assets/calculator-solid.svg" alt="Converter entered number" />
             Convert
           </button>
 
-          <button id="reset-button" onclick="cleanInput()">
-            <img class="button-icon" src="assets/arrow-rotate-left-solid.svg" onload="SVGInject(this)" alt="Reset entered input" />
+          <button id="reset-button" onclick="cleanInputAndOutput()">
+            <img class="button-icon" src="assets/arrow-rotate-left-solid.svg" alt="Reset entered input" />
             Reset
           </button>
         </div>
@@ -88,6 +83,5 @@
 
     <script src="js/matrix.js"></script>
     <script src="js/dom-changes.js"></script>
-    <script src="js/buttons.js"></script>
   </body>
 </html>

@@ -5,8 +5,6 @@ var ctx = bg.getContext('2d');
 bg.height = window.screen.availHeight;
 bg.width = window.screen.availWidth;
 
-console.log('h: ', bg.height, 'w: ', bg.width);
-
 var fontSize = 10;
 var columns = bg.width / fontSize;
 
@@ -31,4 +29,4 @@ function draw() {
   }
 }
 
-setInterval(draw, 40);
+setInterval(draw, 50);

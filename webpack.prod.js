@@ -15,10 +15,8 @@ module.exports = {
   entry: {
     styles: './src/js/styles.js',
     images: './src/js/images.js',
-    buttons: './src/js/buttons.js',
     matrix: './src/js/matrix.js',
-    styles_change: './src/js/dom-changes.js',
-    svg_inject: './src/js/svg-inject.js',
+    dom_changes: './src/js/dom-changes.js',
   },
 
   output: {
