@@ -125,7 +125,7 @@ function outputConvertedNumber() {
 
 function cleanInputAndOutput() {
   input.value = '';
-  output.value = '';
+  output.innerHTML = '';
 
   checkInput(input);
 }

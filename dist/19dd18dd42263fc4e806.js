@@ -1,5 +1,3 @@
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
 var fromSelect = document.querySelectorAll('#types')[0];
 var toSelect = document.querySelectorAll('#types')[1];
 
@@ -127,11 +125,7 @@ function outputConvertedNumber() {
 
 function cleanInputAndOutput() {
   input.value = '';
-  output.value = '';
+  output.innerHTML = '';
 
   checkInput(input);
 }
-
-/******/ })()
-;
-//# sourceMappingURL=dom_changes.8cf78ce5c4494f4850f2.js.map
