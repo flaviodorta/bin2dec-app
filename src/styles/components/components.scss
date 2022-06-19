@@ -25,12 +25,16 @@
 
   @include resp(sm) {
     font-size: 1.3rem;
-    width: 80%;
+    width: 70%;
   }
 
   @include resp(md) {
     font-size: 1.5rem;
-    width: 70%;
+    width: 60%;
+  }
+
+  @include resp(lg) {
+    width: 50%;
   }
 
   @include resp(xl) {
@@ -72,6 +76,15 @@
       display: flex;
       align-items: center;
 
+      &:first-child:disabled {
+        background: $red-background;
+        transition: $transition;
+
+        &:active {
+          background: $red-background;
+        }
+      }
+
       .button-icon {
         fill: $white-background;
         width: 1.5rem;
@@ -86,16 +99,16 @@
 
         &:active {
           background-color: $green-button-active;
-          // transition: all 0.2s ease-in-out;
+          // transition: $transition;
         }
       }
       &:last-child {
         background-color: $gray-button;
-        // transition: all 0.2s ease-in-out;
+        // transition: $transition;
 
         &:active {
           background-color: $gray-button-active;
-          // transition: all 0.2s ease-in-out;
+          // transition: $transition;
         }
       }
     }
@@ -124,11 +137,11 @@
     width: 100%;
     border: $border;
     border-radius: 3px;
-    transition: all 0.2s ease-in-out;
+    transition: $transition;
 
     &:focus {
       outline: none;
-      transition: all 0.2s ease-in-out;
+      transition: $transition;
       box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.35);
     }
   }
@@ -138,12 +151,12 @@
     border: $border;
     background-color: $white-background;
     border-radius: 3px;
-    transition: all 0.2s ease-in-out;
+    transition: $transition;
 
     &:focus {
       outline: none;
       box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.4);
-      transition: all 0.2s ease-in-out;
+      transition: $transition;
     }
   }
 
@@ -153,12 +166,12 @@
     border: $border;
     background-color: $white-background;
     border-radius: 3px;
-    transition: all 0.2s ease-in-out;
+    transition: $transition;
 
     &:focus {
       outline: none;
       box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.35);
-      transition: all 0.2s ease-in-out;
+      transition: $transition;
     }
   }
 }

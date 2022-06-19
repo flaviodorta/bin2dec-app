@@ -6,15 +6,17 @@ $gray-button: #64748b;
 $gray-button-active: #334155;
 $gray-border: #d4d5d4;
 
-$red-with-alpha-background: #ff4c301a;
+$red-with-alpha-background: #ff4c3033;
+$red-background: #ff4c30;
 $white-background: #fdfcfa;
 $gray-background: #f0eedc;
 $black-background: #0d0208;
+
+$transition: all 0.2s ease-in-out;
 
 $shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
 $border: 1px solid $gray-border;
 
-$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
   'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; ;

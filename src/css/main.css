@@ -49,11 +49,14 @@ body {
   @media screen and (max-width: 639px) {
     .container {
       font-size: 1.3rem;
-      width: 80%; } }
+      width: 70%; } }
   @media screen and (min-width: 640px) {
     .container {
       font-size: 1.5rem;
-      width: 70%; } }
+      width: 60%; } }
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 50%; } }
   @media screen and (min-width: 1024px) {
     .container {
       width: 40%; } }
@@ -82,6 +85,11 @@ body {
       color: #fdfcfa;
       display: flex;
       align-items: center; }
+      .row:nth-child(3) > button:first-child:disabled {
+        background: #ff4c30;
+        transition: all 0.2s ease-in-out; }
+        .row:nth-child(3) > button:first-child:disabled:active {
+          background: #ff4c30; }
       .row:nth-child(3) > button .button-icon {
         fill: #fdfcfa;
         width: 1.5rem;
