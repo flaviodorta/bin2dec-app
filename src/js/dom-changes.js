@@ -13,15 +13,22 @@ var swapButton = document.querySelector('#swap-button');
 
 // Event listeners do buttons
 
-fromSelect.addEventListener('change', () => {
+fromSelect.addEventListener('change', (e) => {
   checkLabels();
+  console.log(e.target.value);
+  checkPlaceholders();
+  console.log('to select');
+  checkInput(input);
+});
 
+toSelect.addEventListener('change', (e) => {
+  checkLabels();
+  console.log('to select');
+  console.log(e.target.value);
   checkPlaceholders();
 
   checkInput(input);
 });
-
-toSelect.addEventListener('change', (e) => checkLabels);
 
 input.addEventListener('keyup', (e) => checkInput(e.target));
 
@@ -39,8 +46,48 @@ swapButton.onclick = () => swapSelectsValues();
 
 // Não funciona para números muito grandes, refazer usando
 // o algoritmo matemático
+// function convertNumberBetweenBases_OLD(number, base1, base2) {
+//   return parseInt(number, base1).toString(base2);
+// }
+
+// Função de mudança de base nova
 function convertNumberBetweenBases(number, base1, base2) {
-  return parseInt(number, base1).toString(base2);
+  const chars = [...number].reverse();
+
+  let newNumberInBase10 = chars.reduce((acc, val, idx) => {
+    val = val.toUpperCase();
+    console.log((val.charCodeAt(0) - 55) * base1 ** idx);
+    if (['A', 'B', 'C', 'D', 'E', 'F'].includes(val)) return acc + (val.charCodeAt(0) - 55) * base1 ** idx;
+    else if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(val)) return acc + Number(val) * base1 ** idx;
+  }, 0);
+
+  if (base2 === 10) return newNumberInBase10;
+
+  let q = newNumberInBase10;
+  let newNumberInNotBase10 = [];
+
+  const base16 = {
+    10: 'A',
+    11: 'B',
+    12: 'C',
+    13: 'D',
+    14: 'E',
+    15: 'F',
+  };
+
+  while (q > 0) {
+    rest = q % base2;
+
+    if (rest in base16) rest = base16[rest];
+
+    newNumberInNotBase10 = [...newNumberInNotBase10, rest];
+
+    q = Math.floor(q / base2);
+  }
+
+  newNumberInNotBase10.reverse();
+
+  return newNumberInNotBase10.join('');
 }
 
 function convertNumberByBaseToText(number, base) {
@@ -104,32 +151,29 @@ function checkInput(element) {
     convertButton.disabled = false;
   };
 
+  const setBackgroundAndButtonToDisabledState = () => {
+    target.style.backgroundColor = '#ff4c3033';
+    convertButton.disabled = true;
+  };
+
   if (fromSelect.value === 'decimal') {
-    if (!/^[0-9]+$/.test(val) && val.length > 0) {
-      target.style.backgroundColor = '#ff4c3033';
-      convertButton.disabled = true;
-    } else setBackgroundAndButtonToNormalState();
+    if (!/^[0-9]+$/.test(val) && val.length > 0) setBackgroundAndButtonToDisabledState();
+    else setBackgroundAndButtonToNormalState();
   }
 
   if (fromSelect.value === 'binary') {
-    if (!/^[0-1]+$/.test(val) && val.length > 0) {
-      target.style.backgroundColor = '#ff4c3033';
-      convertButton.disabled = true;
-    } else setBackgroundAndButtonToNormalState();
+    if (!/^[0-1]+$/.test(val) && val.length > 0) setBackgroundAndButtonToDisabledState();
+    else setBackgroundAndButtonToNormalState();
   }
 
   if (fromSelect.value === 'octal') {
-    if (!/^[0-7]+$/.test(val) && val.length > 0) {
-      target.style.backgroundColor = '#ff4c3033';
-      convertButton.disabled = true;
-    } else setBackgroundAndButtonToNormalState();
+    if (!/^[0-7]+$/.test(val) && val.length > 0) setBackgroundAndButtonToDisabledState();
+    else setBackgroundAndButtonToNormalState();
   }
 
   if (fromSelect.value === 'hexadecimal') {
-    if (!/^[0-9a-fA-F]+$/.test(val) && val.length > 0) {
-      target.style.backgroundColor = '#ff4c3033';
-      convertButton.disabled = true;
-    } else setBackgroundAndButtonToNormalState();
+    if (!/^[0-9a-fA-F]+$/.test(val) && val.length > 0) setBackgroundAndButtonToDisabledState();
+    else setBackgroundAndButtonToNormalState();
   }
 
   if (fromSelect.value === 'text') setBackgroundAndButtonToNormalState();
@@ -148,9 +192,12 @@ function checkPlaceholders() {
 }
 
 function checkLabels() {
-  inputLabel.innerHTML = `Enter ${fromSelect.value} number`;
+  const fromSelectValue = fromSelect.value;
+  const toSelectValue = toSelect.value;
 
-  outputLabel.innerHTML = `${e.target.value[0].toUpperCase() + e.target.value.slice(1)} ${e.target.value === 'text' ? '' : 'number'}`;
+  inputLabel.innerHTML = `Enter ${fromSelectValue} number`;
+
+  outputLabel.innerHTML = `${toSelectValue[0].toUpperCase() + toSelectValue.slice(1)} ${toSelectValue === 'text' ? '' : 'number'}`;
 }
 
 function cleanOutput() {
