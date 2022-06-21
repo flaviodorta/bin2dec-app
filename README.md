@@ -24,7 +24,7 @@
       <a href="https://github.com/flaviodorta/bin2dec-app/issues">Request Feature</a>
   </p>
 
-![GIF Screenshot](https://www.kapwing.com/videos/62b1fe478bf39e00bb76a31f)
+![GIF Screenshot](https://cdn.kapwing.com/final_62b1fe478bf39e00bb76a31f_722649.gif)
 
 </p>
 
